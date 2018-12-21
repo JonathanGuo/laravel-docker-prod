@@ -1,6 +1,6 @@
 # Laravel Docker Dev
 
-This is a image for you to quickly start running a Laravel application in docker. The image contains xdebug so you don't want to use it for production.
+This is a image for you to quickly start running a Laravel application in docker.
 
 `Composer` comes with the image.
 
@@ -27,7 +27,6 @@ This is a image for you to quickly start running a Laravel application in docker
 - [x] soap
 - [x] sockets
 - [x] zip
-- [x] xdebug
 - [x] grpc
 - [x] memcached
 
@@ -66,8 +65,6 @@ services:
     volumes:
       - ~/.composer-docker/cache:/root/.composer/cache:delegated
       - ./:/app:delegated
-    environment:
-      PHP_IDE_CONFIG: "serverName=myapp.domain"
   nginx:
     image: nginx:latest
     depends_on:
