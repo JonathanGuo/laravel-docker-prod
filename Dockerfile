@@ -69,13 +69,13 @@ RUN apk update && \
 # Download trusted certs
     mkdir -p /etc/ssl/certs && update-ca-certificates && \
 # Copy php configuration
-    cp /tmp/config/php.ini /usr/local/etc/php/php.ini
+    cp /tmp/config/php.ini /usr/local/etc/php/php.ini && \
 # Copy supervisor config
-RUN mkdir /etc/supervisor.d && \
+    mkdir /etc/supervisor.d && \
     cp /tmp/config/supervisord.conf /etc/supervisord.conf && \
-    cp -r /tmp/config/supervisor.d /etc
+    cp -r /tmp/config/supervisor.d /etc && \
 # Copy cron job
-RUN cp /tmp/config/crontab /etc/crontabs/root && \
+    cp /tmp/config/crontab /etc/crontabs/root && \
     cp /tmp/config/entrypoint.sh /entrypoint.sh && \
     rm -rf /tmp/config && \
     chmod a+x /entrypoint.sh
