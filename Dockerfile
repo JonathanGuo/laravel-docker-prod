@@ -76,10 +76,6 @@ RUN apk update && \
     cp -r /tmp/config/supervisor.d /etc && \
 # Copy cron job
     cp /tmp/config/crontab /etc/crontabs/root && \
-    cp /tmp/config/entrypoint.sh /entrypoint.sh && \
-    rm -rf /tmp/config && \
-    chmod a+x /entrypoint.sh
-
-ENTRYPOINT ["/entrypoint.sh"]
+    rm -rf /tmp/config
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
