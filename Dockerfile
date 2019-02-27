@@ -1,7 +1,12 @@
-FROM chcjonathanguo/laravel-docker-prod:7.2
+FROM chcjonathanguo/laravel-docker-prod:7.2-with-nodejs
 LABEL maintainer="jonathan <chc.jonathan.guo@outlook.com>"
 
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=${PUPPETEER_SKIP_CHROMIUM_DOWNLOAD:-true}
+
 # Install system packages
-RUN apk add --no-cache \
-        nodejs \
-        npm
+RUN apk update && \
+    apk add --no-cache \
+        # Chromium dependencies
+        chromium \
+        harfbuzz \
+        nss
