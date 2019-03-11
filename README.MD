@@ -7,7 +7,7 @@ This is a image for you to quickly start running a Laravel application in docker
 ## Supported tags and respective Dockerfile links
 
 - [`latest` (Dockerfile)](https://github.com/JonathanGuo/laravel-docker-dev/blob/master/Dockerfile) - PHP-FPM 7.2 alpine
-- [`7.3` (Dockerfile)](https://github.com/JonathanGuo/laravel-docker-prod/blob/7.3/Dockerfile) - PHP-FPM 7.2 alpine
+- [`7.3` (Dockerfile)](https://github.com/JonathanGuo/laravel-docker-prod/blob/7.3/Dockerfile) - PHP-FPM 7.3 alpine
 - [`7.2` (Dockerfile)](https://github.com/JonathanGuo/laravel-docker-prod/blob/7.2/Dockerfile) - PHP-FPM 7.2 alpine
 
 ### Deprecated
