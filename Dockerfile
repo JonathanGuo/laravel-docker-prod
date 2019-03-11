@@ -1,7 +1,10 @@
-FROM php:7.2-fpm-alpine
+FROM php:7.3-fpm-alpine
 LABEL maintainer="jonathan <chc.jonathan.guo@outlook.com>"
 
 WORKDIR /app
+
+ENV ENABLE_CRON_JOB=${ENABLE_CRON_JOB:-false}
+ENV ENABLE_LARAVEL_WORKER=${ENABLE_LARAVEL_WORKER:-false}
 
 COPY config /tmp/config
 
@@ -20,8 +23,9 @@ RUN apk update && \
         libpq \
         libwebp \
         libmemcached \
-        composer \
-        supervisor && \
+        supervisor \
+        libzip \
+        composer && \
     apk add --no-cache --virtual build-dependencies \
         curl-dev \
         freetds-dev \
@@ -32,6 +36,7 @@ RUN apk update && \
         libpng-dev \
         libwebp-dev \
         libxml2-dev \
+        libzip-dev \
         libmemcached-dev \
         openldap-dev \
         postgresql-dev \
