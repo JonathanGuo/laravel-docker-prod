@@ -41,6 +41,7 @@ The image the environment variables below:
 ```
 ENABLE_CRON_JOB: false
 ENABLE_LARAVEL_WORKER: false
+ENV_ENABLE_LARAVEL_HORIZON: false
 ```
 
 ## Volumes mount

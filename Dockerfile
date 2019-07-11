@@ -5,6 +5,7 @@ WORKDIR /app
 
 ENV ENABLE_CRON_JOB=${ENABLE_CRON_JOB:-false}
 ENV ENABLE_LARAVEL_WORKER=${ENABLE_LARAVEL_WORKER:-false}
+ENV ENV_ENABLE_LARAVEL_HORIZON=${ENV_ENABLE_LARAVEL_HORIZON:-false}
 
 COPY config /tmp/config
 
@@ -66,7 +67,8 @@ RUN apk update && \
         pdo_dblib \
         soap \
         sockets \
-        zip && \
+        zip \
+        pcntl && \
 # Install PECL extensions
     pecl install grpc memcached && \
     docker-php-ext-enable grpc memcached && \
