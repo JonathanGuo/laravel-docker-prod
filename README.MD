@@ -36,12 +36,12 @@ This is a image for you to quickly start running a Laravel application in docker
 
 ## Environment variables
 
-The image the environment variables below:
+This image supports the environment variables below:
 
 ```
 ENABLE_CRON_JOB: false
 ENABLE_LARAVEL_WORKER: false
-ENV_ENABLE_LARAVEL_HORIZON: false
+ENABLE_LARAVEL_HORIZON: false
 ```
 
 ## Volumes mount
